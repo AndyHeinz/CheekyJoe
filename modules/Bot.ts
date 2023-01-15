@@ -18,7 +18,7 @@ export class OpenAiBot extends ActivityHandler {
             const completion = await openai.createCompletion({
                 prompt: context.activity.text,
                 model: process.env.OPENAI_MODEL,
-                max_tokens: 200,
+                max_tokens: process.env.OPENAI_MAX_TOKENS,
             });
 
             // Create data for card
