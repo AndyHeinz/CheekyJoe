@@ -95,6 +95,7 @@ Take a note of the forwarding URL, as you will need it later.
         "AzureWebJobsStorage": "",
         "OPENAI_API_KEY": "<YOUR OPENAI API KEY>",
         "OPENAI_MODEL": "text-davinci-003", // Or whatever model you want to use (see https://beta.openai.com/docs/api-reference/models)
+        "OPENAI_MAX_TOKENS": "200", // See https://beta.openai.com/tokenizer
         "MicrosoftAppId": "<YOUR MICROSOFT APP REGISTRATION ID>",
         "MicrosoftAppPassword": "<YOUR MICROSOFT APP REGISTRATION CLIENT SECRET>",
         "MicrosoftAppTenantId": "<YOUR MICROSOFT APP REGISTRATION TENANT ID>",
