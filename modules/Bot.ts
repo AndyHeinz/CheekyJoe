@@ -18,8 +18,8 @@ export class OpenAiBot extends ActivityHandler {
             const completion = await openai.createCompletion({
                 prompt: context.activity.text,
                 model: process.env.OPENAI_MODEL,
-                max_tokens: process.env.OPENAI_MAX_TOKENS,
-                temperature: process.env.OPENAI_TEMPERATURE,
+                max_tokens: Number(process.env.OPENAI_MAX_TOKENS),
+                temperature: Number(process.env.OPENAI_TEMPERATURE),
             });
 
             // Create data for card
