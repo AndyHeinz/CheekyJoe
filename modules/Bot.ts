@@ -19,6 +19,7 @@ export class OpenAiBot extends ActivityHandler {
                 prompt: context.activity.text,
                 model: process.env.OPENAI_MODEL,
                 max_tokens: process.env.OPENAI_MAX_TOKENS,
+                temperature: process.env.OPENAI_TEMPERATURE,
             });
 
             // Create data for card
