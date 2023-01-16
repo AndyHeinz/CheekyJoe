@@ -2,7 +2,7 @@
 
 ## Summary
 
-This is a sample example OpenAI bot for Microsoft Teams. It allows a user in Teams to send a chat message to the Bot, which then uses [OpenAI API](https://beta.openai.com/overview) to get an answer to the chat message.
+This is a sample example OpenAI bot for Microsoft Teams. It allows a user in Teams to send a chat message to the Bot, which then uses [OpenAI API](https://beta.openai.com/overview) to get an answer to the chat message. You can set the Model, Tokens and temperature in your settings. It'll log all activities in a csv for easy copy & pasting.
 
 > Please note: Currently there is no publicly available API for OpenAI's [ChatGPT](https://openai.com/blog/chatgpt/). This sample uses the OpenAI API, which models doesn't currently include ChatGPT. The OpenAI API is currently in beta, and is not free. You can sign up for a free account [here](https://beta.openai.com/). For a list of supported models, see [here](https://beta.openai.com/docs/api-reference/models).
 
@@ -37,6 +37,8 @@ This is a sample example OpenAI bot for Microsoft Teams. It allows a user in Tea
 Version|Date|Author|Comments
 -------|----|----|--------
 1.0|Jan 3, 2023|Lee Ford|Initial release
+1.0.2|Jan 19, 2023|Andreas Hemmerich|added more Details to the OPENAI API and csv logging
+
 
 ## Disclaimer
 
@@ -97,6 +99,7 @@ Take a note of the forwarding URL, as you will need it later.
         "OPENAI_MODEL": "text-davinci-003", // Or whatever model you want to use (see https://beta.openai.com/docs/api-reference/models)
         "OPENAI_MAX_TOKENS": "200", // See https://beta.openai.com/tokenizer
         "OPENAI_TEMPERATURE" : "0.5", // controls randomness, lowering --> less random
+        "LOGCSV" : "/var/log/openaibot.csv", // write all Q and A as a csv to that location
         "MicrosoftAppId": "<YOUR MICROSOFT APP REGISTRATION ID>",
         "MicrosoftAppPassword": "<YOUR MICROSOFT APP REGISTRATION CLIENT SECRET>",
         "MicrosoftAppTenantId": "<YOUR MICROSOFT APP REGISTRATION TENANT ID>",
