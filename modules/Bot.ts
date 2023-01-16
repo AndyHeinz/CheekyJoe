@@ -3,6 +3,8 @@ import * as ACData from "adaptivecards-templating";
 import * as AnswerCard from "../cards/Answer.json";
 import * as WelcomeCard from "../cards/WelcomeCard.json";
 import { Configuration, OpenAIApi } from "openai";
+import * as fs from "fs";
+import * as csv from "csv-writer";
 
 export class OpenAiBot extends ActivityHandler {
     constructor() {
@@ -32,6 +34,20 @@ export class OpenAiBot extends ActivityHandler {
             const card = CardFactory.adaptiveCard(cardPayload);
 
             await context.sendActivity(MessageFactory.attachment(card));
+
+            const csvwriter = csv.createObjectCsvWriter({
+                path: "data.csv",
+                header: [
+                    {id: "question", title: "Frage"},
+                    {id: "answer", title: "Antwort"}
+                ]
+            });
+            const csvdata = [{question: context.activity.text, answer: completion.data.choices[0].text}];
+            writer.writeRecords(csvdata)       // returns a promise
+                .then(() => {
+                    console.log("...Done");
+                });
+
             await next();
         });
 
