@@ -40,7 +40,8 @@ export class OpenAiBot extends ActivityHandler {
                 header: [
                     {id: "question", title: "Frage"},
                     {id: "answer", title: "Antwort"}
-                ]
+                ],
+                append: true
             });
             const csvdata = [{question: context.activity.text, answer: completion.data.choices[0].text}];
             csvwriter.writeRecords(csvdata)       // returns a promise
