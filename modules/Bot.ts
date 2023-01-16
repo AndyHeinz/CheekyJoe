@@ -36,7 +36,7 @@ export class OpenAiBot extends ActivityHandler {
             await context.sendActivity(MessageFactory.attachment(card));
 
             const csvwriter = csv.createObjectCsvWriter({
-                path: "/mnt/docs/cheekyjoe/data_log.csv",
+                path: process.env.LOGCSV,
                 header: [
                     {id: "question", title: "Frage"},
                     {id: "answer", title: "Antwort"}
