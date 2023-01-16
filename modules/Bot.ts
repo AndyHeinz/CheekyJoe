@@ -43,10 +43,7 @@ export class OpenAiBot extends ActivityHandler {
                 ]
             });
             const csvdata = [{question: context.activity.text, answer: completion.data.choices[0].text}];
-            writer.writeRecords(csvdata)       // returns a promise
-                .then(() => {
-                    console.log("...Done");
-                });
+            csvwriter.writeRecords(csvdata)       // returns a promise
 
             await next();
         });
