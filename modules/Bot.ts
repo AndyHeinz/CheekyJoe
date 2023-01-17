@@ -36,7 +36,7 @@ export class OpenAiBot extends ActivityHandler {
             await context.sendActivity(MessageFactory.attachment(card));
 
             const user = context.activity.from;
-            const userName = user.name;
+            const username = user.name;
 
             const csvwriter = csv.createObjectCsvWriter({
                 path: process.env.LOGCSV+"."+username+".csv",
